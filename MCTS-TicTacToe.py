@@ -224,7 +224,7 @@ def display(current_board): #Displays the board
 
 
 def play_a_new_game():
-	global board, player_piece, ai_piece # Global declaration to avoid 
+	global board, player_piece, ai_piece # Global declaration to avoid UnboundLocalError
 
 	print('Ready for a Tic-Tac-Toe match?')
 	print('You will be X and the AI will be O in the game')
