@@ -161,10 +161,8 @@ class MCS_Tree:  # Monte carlo tree search class for the AI to make a move
 		for node in self.current_node.children:
 			score = 0
 			sim_node = copy.deepcopy(node)
-			sim_node.make_children(player_piece)
-			for inner_node in sim_node.children:
-				for i in range(self.max_sim):
-					score += self.simulate_helper(inner_node, piece, finish_condition, score_func)
+			for i in range(self.max_sim):
+				score += self.simulate_helper(sim_node, piece, finish_condition, score_func)
 			node.score = score
 		return
 
